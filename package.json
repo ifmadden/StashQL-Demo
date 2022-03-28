@@ -2,10 +2,10 @@
   "name": "stashql-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.jsx",
   "scripts": {
-    "dev": "node server/server.js",
-    "start": "webpack serve  --hot --open",
+    "dev": "NODE_ENV='development' server/server.js & NODE_ENV='development' webpack serve --open",
+    "start": "NODE_ENV='production' webpack",
     "build": "webpack --config webpack.config.js --mode production"
   },
   "repository": {
@@ -21,7 +21,8 @@
   "homepage": "https://github.com/LouieMjr/StashQL-Demo#readme",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",

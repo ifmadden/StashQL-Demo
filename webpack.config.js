@@ -8,11 +8,12 @@ module.exports = {
     filename: "bundle.[hash].js",
     path: path.resolve(__dirname, "dist"),
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
   ],
 
   devServer: {
@@ -21,7 +22,7 @@ module.exports = {
       publicPath: '/',
     },
     compress: true,
-    hot: false,
+    hot: true,
     port: 8080,
     /**
      * proxy is required in order to make api calls to
