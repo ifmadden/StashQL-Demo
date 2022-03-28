@@ -1,12 +1,12 @@
 import React from 'react';
-import MainContainer from './client/containers/MainContainer';
+// import MainContainer from './client/containers/MainContainer';
 import HeaderContainer from './client/containers/HeaderContainer';
 
 function App() {
   return (
     <div>
       <HeaderContainer />
-      <MainContainer />
+      {/* <MainContainer /> */}
       <h1>Hello React</h1>
     </div>
   );

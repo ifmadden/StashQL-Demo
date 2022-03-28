@@ -2,11 +2,13 @@
   "name": "stashql-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.jsx",
+  "main": "index.jsx",
   "scripts": {
-    "dev": "NODE_ENV='development' server/server.js & NODE_ENV='development' webpack serve --open",
-    "start": "NODE_ENV='production' webpack",
-    "build": "webpack --config webpack.config.js --mode production"
+    "start": "nodemon node server/server.js",
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack serve --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev2": "concurrently \"NODE_ENV=development webpack-dev-server --open --hot \" \"nodemon ./server/server.js\""
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.4",
+    "concurrently": "^7.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.12.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -39,6 +42,7 @@
     "express": "^4.17.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.15",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

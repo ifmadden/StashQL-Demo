@@ -1,9 +1,21 @@
 import React from 'react';
 
-function NavBar(props) {
+const navLinksArr = ['Logo', 'Documentation', 'Examples', 'GitHub Links'];
+
+function NavBar() {
+  const navlinks = navLinksArr.map((link, index) => {
+    const newLink = (
+      <div className="navLink" id={index}>
+        {' '}
+        {link}
+        {' '}
+      </div>
+    );
+    return newLink;
+  });
   return (
-    <div>
-      This is the NavBar
+    <div className="navContainer">
+      {navlinks}
     </div>
   );
 }
