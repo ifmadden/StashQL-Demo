@@ -1,20 +1,32 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import StashLogo from '../assets/stash.svg';
 
-const navLinksArr = ['Logo', 'Documentation', 'Examples', 'GitHub Links'];
+const StashLogoSVG = <img src={StashLogo} alt="StashQL" />;
+
+const navLinksArr = [StashLogoSVG, 'StashQL', 'Documentation', 'Examples', 'GitHub Links'];
 
 function NavBar() {
   const navlinks = navLinksArr.map((link, index) => {
     const newLink = (
-      <div className="navLink" id={index}>
-        {' '}
-        {link}
-        {' '}
-      </div>
+      <NavLink to={`/${link}`} className="navLink">
+        <div id={`navbar${index}`}>
+          {' '}
+          {link}
+          {' '}
+        </div>
+      </NavLink>
     );
     return newLink;
   });
+
+  const navLogoCombo = navlinks.splice(0, 2);
+
   return (
     <div className="navContainer">
+      <div className="navComboContainer">
+        {navLogoCombo}
+      </div>
       {navlinks}
     </div>
   );
