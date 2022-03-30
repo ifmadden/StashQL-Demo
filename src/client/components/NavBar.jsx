@@ -5,11 +5,12 @@ import StashLogo from '../assets/stash.svg';
 const StashLogoSVG = <img src={StashLogo} alt="StashQL" />;
 
 const navLinksArr = [StashLogoSVG, 'StashQL', 'Documentation', 'Examples', 'GitHub Links'];
+const navLinksToField = ['', '', 'Documentation', 'Examples', 'GitHub Links'];
 
 function NavBar() {
   const navlinks = navLinksArr.map((link, index) => {
     const newLink = (
-      <NavLink to={`/${link}`} className="navLink">
+      <NavLink to={`/${navLinksToField[index]}`} className="navLink">
         <div id={`navbar${index}`}>
           {' '}
           {link}
