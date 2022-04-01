@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import graphqlSVG from '../assets/graphql.svg';
 import redisSVG from '../assets/redis.svg';
@@ -15,7 +15,21 @@ const graphQLHeaderPara = <div>GraphQL provides a complete and understandable de
 const redisHeaderPara = <div>Redis' versatile in-memory data structures let you build data infrastructure for real-time applications requiring low latency and high-throughput.</div>;
 const databaseEditHeaderPara = <div>StashQL will continuously monitor the database for mutations. When a mutation occurs, StashQL will update the cached data.</div>;
 
+const fetchData = async () => {
+  await fetch('http://localhost:3000/')
+    .then((res) => res.json())
+    .then((res) => {
+      const fetchResults = res;
+      console.log('fetchReq', fetchResults.rows);
+    })
+    .catch((err) => console.log(err));
+};
+
 function StashQLBodyMain() {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <section className="MainBodyContainer">
       <section className="bodyColumnContainer1">

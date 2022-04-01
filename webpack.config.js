@@ -21,13 +21,13 @@ module.exports = {
       },
       {
         test: /\.png|svg|jpg|gif$/,
-        use: ["file-loader"],
-      }, 
-    ]
+        use: ['file-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
   ],
   resolve: {
@@ -39,7 +39,7 @@ module.exports = {
     },
     proxy: {
       '/api': 'http://localhost:3000',
-    }
-  }
+    },
+  },
 
-}
+};
