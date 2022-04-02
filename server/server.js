@@ -22,3 +22,11 @@ app.use(express.static('client'));
 app.listen(PORT, () => {
   console.log(`Server Listening on http://localhost:${PORT}`);
 });
+
+// npm install stashql
+// create query/mutation types and define author and book types
+// create a schema
+// create a redis cache
+// create new instance of stashql , takes in schema and redis cache
+// set up graphql endpoint
+// middleware func = stashql.queryhandler
