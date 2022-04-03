@@ -19,7 +19,7 @@ function QueryComp() {
 
   const testQuery3 = `query {
     books {
-      authors{\n\tname\n      }
+      author{\n\tname\n      }
     }
   }`;
 
