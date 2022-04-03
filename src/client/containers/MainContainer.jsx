@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import StashQLHeaderMain from '../components/StashQLHeaderMain';
 import StashQLBodyMain from '../components/StashQLBodyMain';
+import QueryComp from '../components/Demo/QueryComp';
 
 export default function MainContainer() {
   return (
@@ -20,9 +21,9 @@ export default function MainContainer() {
         />
 
         <Route
-          path="/Examples"
+          path="/Demo"
           element={(
-            <StashQLBodyMain />
+            <QueryComp />
 )}
         />
       </Routes>
